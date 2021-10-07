@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <title>hidden page</title>
+    <h1>Pass phrase by Navya Sahithi Ginjupalli</h1>
+ 
+<body>
+    <form>
+        <label for="form1_secret"> Enter the secret phrase</label>
+        <input type ="password" id="form1_secret" name="form1_secret"  value="Let me in"> <br>
+    
+        <label for="form1_guess">Enter a phrase </label>
+        <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+    
+        <input type="button" onclick="processPhrase()" value="check the phrase">
+    </form>
+    
+    
+    <p id="result">This text will be replaced </p>
+    
+    <script> 
+    var correct = 0
+    var wrong = 0
+    
+    
+    function processPhrase (){
+        console.log("Getting form values")
+        secret = document.getElementById("form1_secret").value
+        guess = document.getElementById("form1_guess").value
+        
+        //confirmed = confirm("Are these the values? "+secret+" and "+guess)
+         //result = secret.localeCompare(guess);
+        out = document.getElementById("result")
+        
+        if(secret == guess){
+            correct ++
+            alert("Access allowed!")
+            out.innerHTML = "correct score"+correct
+        } else {
+            wrong++
+            alert ("Access denied!")
+            out.innerHTML ="wrong score"+ wrong
+            if(wrong>3){
+                alert("Account blocked")
+            }
+    
+        }
+        out.innerHTML = "correct count"+ correct +" ; wrong count "+ wrong
+    }
+
+</script>
+<div class ="container">
+    <img src ="giraffe.jpg" width="200" height="200"  onclick="newImage()" id="image" >
+    <br>
+    <!-- <input type="button" onclick="rotateImage()" id="image"> -->
+    <script>
+        var usingImage = 1
+        function newImage(){
+            switch(usingImage ){
+                case 1:
+                  //  var img = document.createElement("img")
+                    //img.src = "giraffe.jpg"
+                    document.getElementById("image").src = "giraffe.jpg"
+                    usingImage = 2
+                    break
+                case 2:
+                    //var img1 = document.createElement("img1")
+                    //img1.src = "elk.jpg"
+                    document.getElementById("image").src = "indian elephant.jpg"
+                    usingImage = 3
+                    break
+                case 3:
+                    document.getElementById("image").src = "nightingale.jpg"
+                    usingImage = 1
+                    break
+                }
+
+        }
+    </script>
+
+</div>
+
+
+<h2>Getting input</h2>
+</body>
+</html>
