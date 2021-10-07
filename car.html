@@ -21,13 +21,13 @@
 
 
 </form>
-<p id="result">result will be checked </p>
+<p id="result">Check the results </p>
 <form>
     <label for="form1_property1">Enter a property</label>
-    <input type ="text" id="form1_property1" name="color" value="red"> <br>
+    <input type ="text" id="form1_property1" name="color" value="Color"> <br>
 
     <label for="form2_property2">Enter a value</label>
-    <input type ="text" id="form2_property2"  value="number"> <br>
+    <input type ="text" id="form2_property2"  value="Silver"> <br>
 
     <input type="button" onclick="updateCar()" value="update a car">
 
@@ -35,7 +35,7 @@
 </form>
 
 
-<p id="outcome">Text will be displayed </p>
+<p id="outcome">Display The inputs </p>
 
 <script> 
 var my_car=" "; 
@@ -56,7 +56,7 @@ function updateCar() {
     property2=document.getElementById("form2_property2").value;
     out=document.getElementById("outcome")
 
-    out.innerHTML="property of mycar:"+property1+"  and  "+property2;
+    out.innerHTML="property of mycar:"+property1+" is  "+property2;
 }
 </script>
 
